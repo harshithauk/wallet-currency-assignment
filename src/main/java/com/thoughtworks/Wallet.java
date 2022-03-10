@@ -11,4 +11,7 @@ public class Wallet {
         }
         balance += amount;
     }
+    public double getBalance(){
+        return balance;
+    }
 }
