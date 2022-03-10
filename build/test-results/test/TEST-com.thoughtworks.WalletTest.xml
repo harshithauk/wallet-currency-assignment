@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.thoughtworks.WalletTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-10T04:39:33" hostname="Mainaks-MacBook-Pro.local" time="0.025">
-  <properties/>
-  <testcase name="shouldNotUseWalletIfNegativeAmountIsAdded()" classname="com.thoughtworks.WalletTest" time="0.025"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

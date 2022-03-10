@@ -3,15 +3,14 @@ package com.thoughtworks;
 import exceptions.InvalidAmountException;
 
 public class Wallet {
-    private double balance;
+    private Rupee balance;
 
-    public void addMoney(double amount) throws InvalidAmountException {
-        if (amount < 0) {
-            throw new InvalidAmountException("invalid amount entered");
-        }
-        balance += amount;
+    public Wallet() throws InvalidAmountException {
+        balance = new Rupee(0);
     }
-    public double getBalance(){
-        return balance;
+
+    public void deposit(Rupee rupee) throws InvalidAmountException {
+        this.balance = this.balance.add(rupee);
     }
+
 }
