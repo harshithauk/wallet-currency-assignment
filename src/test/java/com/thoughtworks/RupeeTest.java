@@ -48,5 +48,10 @@ public class RupeeTest {
         assertEquals(tenRupee, sevenRupee.add(threeRupee));
 
     }
-
+    @Test
+    void shouldAssertOneDollarIsSeventySixRupee() throws InvalidAmountException {
+        Rupee rupee = new Rupee(76.0);
+        USDollar dollar = new USDollar(1.0);
+        assertEquals(rupee,dollar.convertToRupee());
+    }
 }

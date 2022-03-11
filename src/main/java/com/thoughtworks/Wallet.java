@@ -12,5 +12,8 @@ public class Wallet {
     public void deposit(Rupee rupee) throws InvalidAmountException {
         this.balance = this.balance.add(rupee);
     }
+    public Rupee getBalance(){
+        return this.balance;
+    }
 
 }
