@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.thoughtworks.RupeeTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-03-10T10:28:51" hostname="Mainaks-MacBook-Pro.local" time="0.021">
+<testsuite name="com.thoughtworks.RupeeTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-11T05:12:54" hostname="Mainaks-MacBook-Pro.local" time="0.013">
   <properties/>
-  <testcase name="shouldReturnFalseWhenTwoRupeeObjectsArePassed()" classname="com.thoughtworks.RupeeTest" time="0.018"/>
-  <testcase name="shouldNotCreateRupeeInCaseOfNegativeInputProvided()" classname="com.thoughtworks.RupeeTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="shouldAssertTenRupeeIsEqualToAdditionOfSevenRupeeAndThreeRupee()" classname="com.thoughtworks.RupeeTest" time="0.013"/>
+  <system-out><![CDATA[10.0
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

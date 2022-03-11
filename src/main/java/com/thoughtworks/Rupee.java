@@ -14,7 +14,19 @@ public class Rupee {
 
     public Rupee add(Rupee rupee) throws InvalidAmountException {
         double value = this.value + rupee.value;
+        System.out.println(value);
         return new Rupee(value);
     }
 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        Rupee anotherRupee = (Rupee) obj;
+        return this.value == anotherRupee.value;
+    }
 }
+
+
