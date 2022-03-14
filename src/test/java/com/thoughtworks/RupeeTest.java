@@ -8,50 +8,58 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RupeeTest {
     @Test
     void shouldAssertOneTenRupeeNotSameAsAnotherTenRupee() throws InvalidAmountException {
-        Rupee rupee = new Rupee(10.0);
-        Rupee anotherRupee = new Rupee(10.0);
+        Money rupee = new Money(10.0, Currency.RUPEE);
+        Money anotherRupee = new Money(10.0, Currency.RUPEE);
         assertNotSame(rupee, anotherRupee);
     }
 
     @Test
     void shouldNotCreateRupeeInCaseOfNegativeInputProvided() {
-        assertThrows(InvalidAmountException.class, () -> new Rupee(-10.0));
+        assertThrows(InvalidAmountException.class, () -> new Money(-10.0, Currency.RUPEE));
     }
 
     @Test
     void shouldAssertValueOfOneTenRupeeIsEqualToAnotherTenRupee() throws InvalidAmountException {
-        Rupee rupee = new Rupee(10.0);
-        Rupee anotherRupee = new Rupee(10.0);
+        Money rupee = new Money(10.0, Currency.RUPEE);
+        Money anotherRupee = new Money(10.0, Currency.RUPEE);
 
         assertEquals(rupee, anotherRupee);
     }
 
     @Test
     void shouldAssertTenRupeeIsNotEqualToNull() throws InvalidAmountException {
-        Rupee rupee = new Rupee(10.0);
+        Money rupee = new Money(10.0, Currency.RUPEE);
         assertNotEquals(rupee, null);
     }
 
     @Test
     void shouldAssertTenRupeeIsNotEqualToADifferentType() throws InvalidAmountException {
-        Rupee rupee = new Rupee(10.0);
+        Money money = new Money(10.0, Currency.RUPEE);
         Wallet wallet = new Wallet();
-        assertNotEquals(rupee, wallet);
+        assertNotEquals(money, wallet);
     }
 
     @Test
     void shouldAssertTenRupeeIsEqualToAdditionOfSevenRupeeAndThreeRupee() throws InvalidAmountException {
-        Rupee tenRupee = new Rupee(10.0);
-        Rupee sevenRupee = new Rupee(7.0);
-        Rupee threeRupee = new Rupee(3.0);
+        Money tenRupee = new Money(10.0, Currency.RUPEE);
+        Money sevenRupee = new Money(7.0, Currency.RUPEE);
+        Money threeRupee = new Money(3.0, Currency.RUPEE);
 
         assertEquals(tenRupee, sevenRupee.add(threeRupee));
 
     }
+
     @Test
     void shouldAssertOneDollarIsSeventySixRupee() throws InvalidAmountException {
-        Rupee rupee = new Rupee(76.0);
-        USDollar dollar = new USDollar(1.0);
-        assertEquals(rupee,dollar.convertToRupee());
+        Money seventySixRupee = new Money(76.0, Currency.RUPEE);
+        Money oneDollar = new Money(1, Currency.DOLLAR);
+        assertEquals(seventySixRupee, oneDollar);
+    }
+
+    @Test
+    void shouldAssertOneRupeeIsZeroPointZeroOneTwoEuro() throws InvalidAmountException {
+        Money seventySixRupee = new Money(76.0, Currency.RUPEE);
+        Money oneEuro = new Money(0.012, Currency.EURO);
+        assertEquals(seventySixRupee, oneEuro);
     }
 }

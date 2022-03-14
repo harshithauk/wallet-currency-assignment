@@ -3,16 +3,16 @@ package com.thoughtworks;
 import exceptions.InvalidAmountException;
 
 public class Wallet {
-    private Rupee balance;
+    private Money balance;
 
     public Wallet() throws InvalidAmountException {
-        balance = new Rupee(0);
+        balance = new Money(0, Currency.RUPEE);
     }
 
-    public void deposit(Rupee rupee) throws InvalidAmountException {
+    public void deposit(Money rupee) throws InvalidAmountException {
         this.balance = this.balance.add(rupee);
     }
-    public Rupee getBalance(){
+    public Money getBalance(){
         return this.balance;
     }
 
