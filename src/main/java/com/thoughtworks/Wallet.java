@@ -1,5 +1,6 @@
 package com.thoughtworks;
 
+import exceptions.InsufficientBalanceException;
 import exceptions.InvalidAmountException;
 
 public class Wallet {
@@ -12,8 +13,16 @@ public class Wallet {
     public void deposit(Money rupee) throws InvalidAmountException {
         this.balance = this.balance.add(rupee);
     }
-    public Money getBalance(){
+
+    public Money getBalance(Currency currency) throws InvalidAmountException {
+        if (currency == Currency.DOLLAR) {
+            return this.balance.convertToDollar();
+        }
         return this.balance;
     }
 
+    public Money withdraw(Money rupee) throws InsufficientBalanceException, InvalidAmountException {
+        this.balance = this.balance.subtract(rupee);
+        return this.balance;
+    }
 }

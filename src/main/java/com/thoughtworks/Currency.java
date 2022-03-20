@@ -15,4 +15,6 @@ public enum Currency {
     public double convert(double amount) {
         return baseAmount * amount;
     }
+
+
 }
