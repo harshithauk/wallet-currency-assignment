@@ -20,20 +20,20 @@ public class Money {
         this.currency = currency;
     }
 
-    public Money add(Money rupee) throws InvalidAmountException {
+    public Money add(Money money) throws InvalidAmountException {
         double value;
-        if (rupee.currency != Currency.RUPEE) {
-            value = this.value + rupee.currency.convert(rupee.value);
+        if (money.currency != Currency.RUPEE) {
+            value = this.value + money.currency.convert(money.value);
         } else {
-            value = this.value + rupee.value;
+            value = this.value + money.value;
         }
         return new Money(value, currency);
     }
 
-    public Money subtract(Money rupee) throws InsufficientBalanceException, InvalidAmountException {
+    public Money subtract(Money money) throws InsufficientBalanceException, InvalidAmountException {
         double value;
-        if (this.value < rupee.value) throw new InsufficientBalanceException();
-        value = abs(rupee.value - this.value);
+        if (this.value < money.value) throw new InsufficientBalanceException();
+        value = this.value - money.value;
         return new Money(value, currency);
     }
 
@@ -54,8 +54,10 @@ public class Money {
     }
 
 
-    public Money convertToDollar() throws InvalidAmountException {
-        return new Money(this.value / 76.0, Currency.DOLLAR);
+    public Money getBalance(Currency currency) throws InvalidAmountException {
+        if (currency != Currency.RUPEE)
+            return this.currency.convertCurrency(this.value, currency);
+        return this;
     }
 }
 

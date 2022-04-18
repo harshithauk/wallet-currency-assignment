@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import exceptions.InvalidAmountException;
+
 public enum Currency {
     RUPEE(1),
     DOLLAR(76),
@@ -16,5 +18,9 @@ public enum Currency {
         return baseAmount * amount;
     }
 
+    public Money convertCurrency(double amount, Currency currency) throws InvalidAmountException {
+        double value = amount / currency.baseAmount;
+        return new Money(value , currency);
+    }
 
 }

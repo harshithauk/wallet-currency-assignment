@@ -10,19 +10,16 @@ public class Wallet {
         balance = new Money(0, Currency.RUPEE);
     }
 
-    public void deposit(Money rupee) throws InvalidAmountException {
-        this.balance = this.balance.add(rupee);
+    public void deposit(Money money) throws InvalidAmountException {
+        this.balance = this.balance.add(money);
     }
 
     public Money getBalance(Currency currency) throws InvalidAmountException {
-        if (currency == Currency.DOLLAR) {
-            return this.balance.convertToDollar();
-        }
-        return this.balance;
+        return this.balance.getBalance(currency);
     }
 
-    public Money withdraw(Money rupee) throws InsufficientBalanceException, InvalidAmountException {
-        this.balance = this.balance.subtract(rupee);
+    public Money withdraw(Money money) throws InsufficientBalanceException, InvalidAmountException {
+        this.balance = this.balance.subtract(money);
         return this.balance;
     }
 }

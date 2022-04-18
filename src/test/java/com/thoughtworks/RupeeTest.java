@@ -58,8 +58,8 @@ public class RupeeTest {
 
     @Test
     void shouldAssertOneRupeeIsZeroPointZeroOneTwoEuro() throws InvalidAmountException {
-        Money seventySixRupee = new Money(76.0, Currency.RUPEE);
-        Money oneEuro = new Money(0.012, Currency.EURO);
-        assertEquals(seventySixRupee, oneEuro);
+        Money oneRupee = new Money(1.0, Currency.RUPEE);
+        Money zeroPointZeroOneTwoEuro = new Money(0.012, Currency.EURO);
+        assertEquals(oneRupee, zeroPointZeroOneTwoEuro);
     }
 }
