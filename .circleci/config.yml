@@ -46,18 +46,12 @@ jobs:
       - run: gradle test
       
 
-  build-test-and-deploy:
+  build-test:
     jobs:
       - build
-      - test1:
+      - test:
           requires:
             - build
           context: org-global
-      - test2:
-          requires:
-            - test1
-          context: org-global
-      - deploy:
-          requires:
-            - test2
+      
 
