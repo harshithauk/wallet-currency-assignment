@@ -46,12 +46,5 @@ jobs:
       - run: gradle test
       
 
-  build-test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-          context: org-global
       
 
