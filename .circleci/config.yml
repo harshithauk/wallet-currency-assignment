@@ -52,6 +52,7 @@ jobs:
       example-workflow:
         jobs:
           - heroku/deploy-via-git:
+              app-name: wallet-assignment 
               api-key: '6846212f-eff6-49a7-89a4-166d3c203089' 
         
 
