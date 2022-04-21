@@ -2,8 +2,6 @@
 # See: https://circleci.com/docs/2.0/language-java/
 version: 2
 
-orbs:
-  heroku: circleci/heroku@1.2.6
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -48,11 +46,7 @@ jobs:
 
       # run tests!
       - run: gradle test
-  # workflows:
-  #     example-workflow:
-  #       jobs:
-  #         - heroku/deploy-via-git:
-  #             api-key: '6846212f-eff6-49a7-89a4-166d3c203089' 
+
         
 
       
