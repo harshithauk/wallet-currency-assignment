@@ -2,7 +2,8 @@
 # See: https://circleci.com/docs/2.0/language-java/
 version: 2
 
-
+orbs:
+  gradle: circleci/gradle@2.2.0
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 
@@ -46,6 +47,10 @@ jobs:
 
       # run tests!
       - run: gradle test
+  workflows:
+    example-workflow:
+      jobs:
+        - gradle/run
 
         
 
