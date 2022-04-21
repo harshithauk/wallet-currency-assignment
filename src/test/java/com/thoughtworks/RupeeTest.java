@@ -20,16 +20,16 @@ public class RupeeTest {
 
     @Test
     void shouldAssertValueOfOneTenRupeeIsEqualToAnotherTenRupee() throws InvalidAmountException {
-        Money rupee = new Money(10.0, Currency.RUPEE);
+        Money tenRupee = new Money(10.0, Currency.RUPEE);
         Money anotherRupee = new Money(10.0, Currency.RUPEE);
 
-        assertEquals(rupee, anotherRupee);
+        assertEquals(tenRupee, anotherRupee);
     }
 
     @Test
     void shouldAssertTenRupeeIsNotEqualToNull() throws InvalidAmountException {
-        Money rupee = new Money(10.0, Currency.RUPEE);
-        assertNotEquals(rupee, null);
+        Money tenRupee = new Money(10.0, Currency.RUPEE);
+        assertNotEquals(tenRupee, null);
     }
 
     @Test
@@ -37,6 +37,7 @@ public class RupeeTest {
         Money money = new Money(10.0, Currency.RUPEE);
         Wallet wallet = new Wallet();
         assertNotEquals(money, wallet);
+
     }
 
     @Test
