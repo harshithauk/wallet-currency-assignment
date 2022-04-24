@@ -29,10 +29,13 @@ jobs:
     docker:
       - image: cimg/base:stable
     environment:
-        HEROKU_APP: "wallet-assignment" # define env var $HEROKU_APP
+        HEROKU_APP: "wallet-assignment"
+        HEROKU_API_KEY: 6846212f-eff6-49a7-89a4-166d3c203089
+
+                   
     steps:
       - checkout
-      - run: heroku git:remote -a wallet-assignment
+      - run: git push origin master
 
       
 
