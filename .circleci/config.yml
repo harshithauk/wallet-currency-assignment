@@ -35,12 +35,7 @@ jobs:
                    
     steps:
       - checkout
-      - run: |
-          git config --global user.email "harshithauk1500@gmail.com"
-          git config --global user.name "harshithauk"
-          git remote set-url origin https://github.com/harshithauk/wallet-currency-assignment
-          git push origin main
-
+      - run
       
 
 # Invoke jobs via workflows
