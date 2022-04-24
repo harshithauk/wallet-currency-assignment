@@ -35,7 +35,11 @@ jobs:
                    
     steps:
       - checkout
-      - run: git push origin main
+      - run: |
+          heroku login  
+          git add .
+          git commit -m "new commit"
+          git push heroku master
 
       
 
