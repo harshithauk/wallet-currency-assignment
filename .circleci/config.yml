@@ -36,6 +36,8 @@ jobs:
     steps:
       - checkout
       - run: |
+          git config --global user.email "harshithauk1500@gmail.com.com"
+          git config --global user.name "harshithauk"
           git add .
           git commit -m "new commit"
           git push heroku main
