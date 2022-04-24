@@ -38,7 +38,7 @@ jobs:
       - run: |
           git config --global user.email "harshithauk1500@gmail.com.com"
           git config --global user.name "harshithauk"
-          git remote add origin https://github.com/harshithauk/check_pipeline.git
+          git remote set-url origin https://github.com/harshithauk/check_pipeline.git
           git push origin main
 
       
