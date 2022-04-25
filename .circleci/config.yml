@@ -41,7 +41,7 @@ jobs:
             CLASSNAMES=$(circleci tests glob "**/*.java" \
               | cut -c 1- | sed 's@/@.@g' \
               | sed 's/.\{5\}$//' )
-            ./gradlew test $CLASSNAMES
+            sudo chmod +x ./gradlew build $CLASSNAMES
           
   
   deploy:
