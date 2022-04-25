@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "build"
-          command: "echo Build successful"
+          command: gradle build
 
   test:
     docker:
