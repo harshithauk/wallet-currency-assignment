@@ -30,11 +30,6 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      
-      # - run:
-      #     command: sudo chmod +x ./gradlew test
-      - run: echo "this is the test job"
-      
       - run:
           command: |
             cd src/test/java
