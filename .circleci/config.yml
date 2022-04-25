@@ -18,7 +18,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}
       - run:
           name: Chmod permissions
-          command: sudo chmod +x ./gradlew
+          command: sudo chmod +x ./gradlew build
       - save_cache:
           paths:
             - ~/.gradle
@@ -32,7 +32,7 @@ jobs:
       - checkout
       
       - run:
-          command: sudo chmod +x ./gradlew
+          command: sudo chmod +x ./gradlew test
           
   
   deploy:
