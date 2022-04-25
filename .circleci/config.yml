@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "build"
-          command: gradle build
+          command: gradle wrapper
 
   test:
     docker:
