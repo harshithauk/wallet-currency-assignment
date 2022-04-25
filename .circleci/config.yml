@@ -32,7 +32,8 @@ jobs:
       - checkout
       
       - run:
-          ./gradlew test
+          command: sudo chmod +x ./gradlew
+          
   
   deploy:
     docker:
