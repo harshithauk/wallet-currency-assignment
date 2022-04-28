@@ -30,13 +30,10 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run:
-          command: |
-            cd src/test/java
-            CLASSNAMES=$(circleci tests glob "**/*.java" \
-              | cut -c 1- | sed 's@/@.@g' \
-              | sed 's/.\{5\}$//' )
-            sudo chmod +x ./gradlew test 
+      - run: |
+          cd src/test/java
+          CLASSNAMES=$(circleci tests glob "**/*.java" \
+          ./gradlew test $CLASSNAMES
           
   
   deploy:
