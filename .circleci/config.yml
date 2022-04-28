@@ -30,6 +30,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}
       - run:
          command: ./gradlew test
 
