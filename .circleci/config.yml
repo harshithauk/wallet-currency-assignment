@@ -30,10 +30,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: |
-          cd src/test/java
-          CLASSNAMES=$(circleci tests glob "**/*.java" \ )
-          ./gradlew test $CLASSNAMES
+      - run: ./gradlew test
+
           
   
   deploy:
