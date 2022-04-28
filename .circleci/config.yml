@@ -30,8 +30,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: 
-          command: ./gradlew test 
+      - run
 
 
 
@@ -47,7 +46,7 @@ jobs:
                    
     steps:
       - checkout
-      - run: echo "Deployed"
+      - run: ./gradlew deploy
 
       
 
