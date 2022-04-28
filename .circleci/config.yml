@@ -30,10 +30,14 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}
       - run:
-         command: ./gradlew test
+         name: "Setup custom environment variables"
+         command: |
+          echo 'export JAVA_HOM'="/usr/libexec/java_home -v <version>"'>> $BASH_ENV
+          ./gradlew test
 
   deploy:
     docker:
