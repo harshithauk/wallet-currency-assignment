@@ -32,7 +32,7 @@ jobs:
       - checkout
       - run: |
           cd src/test/java
-          CLASSNAMES=$(circleci tests glob "**/*.java" \
+          CLASSNAMES=$(circleci tests glob "**/*.java" \)
           ./gradlew test $CLASSNAMES
           
   
