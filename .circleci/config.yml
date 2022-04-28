@@ -31,6 +31,7 @@ jobs:
     steps:
       - checkout
       - run: 
+          working_directory: wallet-currency-assignment/src/test/
           command : ./gradlew WalletTest.java
 
           
