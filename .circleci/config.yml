@@ -31,7 +31,6 @@ jobs:
     steps:
       - checkout
       - run: 
-          working_directory: wallet-currency-assignment
           command : |
             cd src/test/java
             # Get list of classnames of tests that should run on this node
