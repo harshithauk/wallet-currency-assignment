@@ -32,7 +32,11 @@ jobs:
       - checkout
       - run: 
           working_directory: wallet-currency-assignment
-          command : ./gradlew test
+          command : |
+            ./gradlew clean -d
+            ./gradlew test
+
+
 
           
   
