@@ -31,7 +31,7 @@ jobs:
     steps:
       - checkout
       - run: 
-          command : cd sudo chmod +x ./gradlew WalletTest.java
+          command : sudo chmod +x ./gradlew WalletTest.java
 
           
   
