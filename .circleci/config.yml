@@ -36,7 +36,7 @@ jobs:
       - run:
          name: "Setup custom environment variables"
          command: |
-          echo 'export JAVA_HOM'="/usr/libexec/java_home -v <version>"'>> $BASH_ENV
+          echo 'export JAVA_HOME="/usr/libexec/java_home -v <version>"'>> $BASH_ENV
           ./gradlew test
 
   deploy:
