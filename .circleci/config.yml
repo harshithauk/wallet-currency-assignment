@@ -31,14 +31,7 @@ jobs:
     steps:
       - checkout
       - run: 
-          command : |
-            cd src/test/java
-            # Get list of classnames of tests that should run on this node
-            CLASSNAMES=$(circleci tests glob "**/*.java" )
-            cd ../../..
-            GRADLE_ARGS=$(echo $CLASSNAMES | awk '{for (i=1; i<=NF; i++) print "--tests",$i}')
-            echo "Prepared arguments for Gradle: $GRADLE_ARGS"
-            ./gradlew test $GRADLE_ARGS
+          command: ./gradlew test 
 
 
 
