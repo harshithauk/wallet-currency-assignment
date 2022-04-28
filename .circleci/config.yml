@@ -30,23 +30,16 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run
+      - run:
+         command: echo "Run"
 
-
-
-          
-  
   deploy:
     docker:
       - image: cimg/base:stable
-    environment:
-        HEROKU_APP: "wallet-assignment"
-        HEROKU_API_KEY: 6846212f-eff6-49a7-89a4-166d3c203089
-
-                   
     steps:
       - checkout
-      - run: ./gradlew deploy
+      - run:
+         command: echo "Run"
 
       
 
