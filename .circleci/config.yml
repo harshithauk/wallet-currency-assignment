@@ -30,8 +30,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: src/main/test/
-        cd sudo chmod +x ./gradlew WalletTest.java
+      - run: 
+          command : cd sudo chmod +x ./gradlew WalletTest.java
 
           
   
