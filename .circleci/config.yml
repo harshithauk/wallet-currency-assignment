@@ -39,7 +39,7 @@ jobs:
     steps:
       - checkout
       - run:
-         command: echo "Run"
+         command: ./gradlew deploy
 
       
 
