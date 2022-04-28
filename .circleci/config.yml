@@ -31,7 +31,7 @@ jobs:
     steps:
       - checkout
       - run:
-         command: echo "Run"
+         command: ./gradlew test
 
   deploy:
     docker:
