@@ -30,7 +30,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: ./gradlew test
+      - run: sudo chmod +x ./gradlew test
 
           
   
